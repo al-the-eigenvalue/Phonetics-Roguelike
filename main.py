@@ -14,7 +14,7 @@ def main() -> None:
     map_height = 50
 
     tileset = tcod.tileset.load_tilesheet(
-        "img.png", 32, 8, tcod.tileset.CHARMAP_TCOD
+        "tiles.png", 32, 15, tcod.tileset.CHARMAP_TCOD
     )
 
     event_handler = EventHandler()
