@@ -20,16 +20,14 @@ def main() -> None:
     event_handler = EventHandler()
 
     player = Entity(int(screen_width / 2), int(screen_height / 2), "@", (255, 255, 255))
-    entities = {player}
 
     game_map = generate_dungeon(
         map_width=map_width,
         map_height=map_height,
-        entities=entities,
         player=player
     )
 
-    engine = Engine(entities=entities, event_handler=event_handler, game_map=game_map, player=player)
+    engine = Engine(event_handler=event_handler, game_map=game_map, player=player)
 
     with tcod.context.new_terminal(
             screen_width,

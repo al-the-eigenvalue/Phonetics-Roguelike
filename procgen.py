@@ -14,10 +14,6 @@ map_width = 80
 map_height = 50
 used = set()
 
-rooms: List[RectangularRoom] = []
-
-map = GameMap(map_width, map_height)
-
 
 class RectangularRoom:
     def __init__(self, x: int, y: int, width: int, height: int):
@@ -57,7 +53,7 @@ def tunnel_between(
         yield x, y
 
 
-def traverse_node(node):
+def traverse_node(node, map, rooms):
 
     # Create rooms
     if not node.children:
@@ -121,13 +117,15 @@ def traverse_node(node):
         used.update(log)
 
 
-
 def generate_dungeon(
     map_width: int,
     map_height: int,
-    entities,
     player: Entity
     ) -> GameMap:
+
+    rooms: List[RectangularRoom] = []
+
+    dungeon = GameMap(map_width, map_height, entities=[player])
 
     # New root node
     bsp = tcod.bsp.BSP(0, 0, map_width - 3, map_height - 3)
@@ -138,9 +136,9 @@ def generate_dungeon(
     # Traverse the nodes and create rooms
     order = bsp.inverted_level_order()
     for node in order:
-        traverse_node(node)
+        traverse_node(node, dungeon, rooms)
 
     player_room = random.choice(rooms)
     player.x = player_room.center[0]
     player.y = player_room.center[1]
-    return map
+    return dungeon
