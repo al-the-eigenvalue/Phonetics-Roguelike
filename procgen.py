@@ -4,6 +4,7 @@ import random
 from typing import Iterator, List, Tuple
 import tcod
 
+import entity_factories
 from game_map import GameMap
 import tile_types
 from entity import Entity
@@ -33,6 +34,28 @@ class RectangularRoom:
     def inner(self) -> Tuple[slice, slice]:
         """Return the inner area of this room as a 2D array index."""
         return slice(self.x1 + 1, self.x2), slice(self.y1 + 1, self.y2)
+
+
+def place_entities(
+    room: RectangularRoom, dungeon: GameMap, maximum_monsters: int,
+) -> None:
+    number_of_monsters = random.randint(0, maximum_monsters)
+
+    for i in range(number_of_monsters):
+        x = random.randint(room.x1 + 1, room.x2 - 1)
+        y = random.randint(room.y1 + 1, room.y2 - 1)
+
+        if not any(entity.x == x and entity.y == y for entity in dungeon.entities):
+            if random.random() < 0.2:
+                entity_factories.glottal_stop.spawn(dungeon, x, y)
+            elif random.random() < 0.4:
+                entity_factories.voiceless_glottal_fricative.spawn(dungeon, x, y)
+            elif random.random() < 0.6:
+                entity_factories.voiced_glottal_fricative.spawn(dungeon, x, y)
+            elif random.random() < 0.8:
+                entity_factories.voiceless_pharyngeal_fricative.spawn(dungeon, x, y)
+            else:
+                entity_factories.voiced_pharyngeal_fricative.spawn(dungeon, x, y)
 
 
 def tunnel_between(
@@ -120,6 +143,7 @@ def traverse_node(node, map, rooms):
 def generate_dungeon(
     map_width: int,
     map_height: int,
+    max_monsters_per_room: int,
     player: Entity
     ) -> GameMap:
 
@@ -141,4 +165,6 @@ def generate_dungeon(
     player_room = random.choice(rooms)
     player.x = player_room.center[0]
     player.y = player_room.center[1]
+    for room in rooms:
+        place_entities(room, dungeon, max_monsters_per_room)
     return dungeon
