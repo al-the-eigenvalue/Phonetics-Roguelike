@@ -12,18 +12,18 @@ import tcod
 import color
 from engine import Engine
 import entity_factories
+from game_map import GameWorld
 import input_handlers
-from procgen import generate_dungeon
 
 
 # Load the background image and remove the alpha channel.
-background_image = tcod.image.load("menu_background.png")[:, :, :3]
+background_image = tcod.image.load("background.png")[:, :, :3]
 
 
 def new_game() -> Engine:
     """Return a brand new game session as an Engine instance."""
     map_width = 80
-    map_height = 43
+    map_height = 45
 
     room_max_size = 10
     room_min_size = 6
@@ -36,17 +36,19 @@ def new_game() -> Engine:
 
     engine = Engine(player=player)
 
-    engine.game_map = generate_dungeon(
+    engine.game_world = GameWorld(
+        engine=engine,
         map_width=map_width,
         map_height=map_height,
         max_monsters_per_room=max_monsters_per_room,
         max_items_per_room=max_items_per_room,
-        engine=engine,
     )
+
+    engine.game_world.generate_floor()
     engine.update_fov()
 
     engine.message_log.add_message(
-        "Hello and welcome, adventurer, to yet another dungeon!", color.welcome_text
+        "Welcome to the phonetics course!", color.welcome_text
     )
     return engine
 
@@ -69,16 +71,20 @@ class MainMenu(input_handlers.BaseEventHandler):
         console.print(
             console.width // 2,
             console.height // 2 - 4,
-            "TOMBS OF THE ANCIENT KINGS",
+            "PHONETICS ROGUELIKE",
             fg=color.menu_title,
+            bg=color.black,
             alignment=tcod.CENTER,
+            bg_blend=tcod.BKGND_ALPHA(64),
         )
         console.print(
             console.width // 2,
             console.height - 2,
-            "By (Your name here)",
+            "By @entrapolarity, @chenopodiumlang, and @esil-11",
             fg=color.menu_title,
+            bg=color.black,
             alignment=tcod.CENTER,
+            bg_blend=tcod.BKGND_ALPHA(64),
         )
 
         menu_width = 24

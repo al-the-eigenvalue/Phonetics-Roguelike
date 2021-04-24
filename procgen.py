@@ -46,17 +46,51 @@ def place_entities(
         x = random.randint(room.x1 + 1, room.x2 - 1)
         y = random.randint(room.y1 + 1, room.y2 - 1)
 
-        if not any(entity.x == x and entity.y == y for entity in dungeon.entities):
-            if random.random() < 0.2:
-                entity_factories.glottal_stop.spawn(dungeon, x, y)
-            elif random.random() < 0.4:
-                entity_factories.voiceless_glottal_fricative.spawn(dungeon, x, y)
-            elif random.random() < 0.6:
-                entity_factories.voiced_glottal_fricative.spawn(dungeon, x, y)
-            elif random.random() < 0.8:
-                entity_factories.voiceless_pharyngeal_fricative.spawn(dungeon, x, y)
-            else:
-                entity_factories.voiced_pharyngeal_fricative.spawn(dungeon, x, y)
+        if dungeon.level == 1:
+            if not any(entity.x == x and entity.y == y for entity in dungeon.entities):
+                if random.random() < 0.2:
+                    entity_factories.glottal_stop.spawn(dungeon, x, y)
+                elif random.random() < 0.4:
+                    entity_factories.voiceless_glottal_fricative.spawn(dungeon, x, y)
+                elif random.random() < 0.6:
+                    entity_factories.voiced_glottal_fricative.spawn(dungeon, x, y)
+                elif random.random() < 0.8:
+                    entity_factories.voiceless_pharyngeal_fricative.spawn(dungeon, x, y)
+                else:
+                    entity_factories.voiced_pharyngeal_fricative.spawn(dungeon, x, y)
+
+        elif dungeon.level == 2:
+            if not any(entity.x == x and entity.y == y for entity in dungeon.entities):
+                if random.random() < 0.1667:
+                    entity_factories.voiced_uvular_stop.spawn(dungeon, x, y)
+                elif random.random() < 0.3333:
+                    entity_factories.voiced_uvular_stop.spawn(dungeon, x, y)
+                elif random.random() < 0.5:
+                    entity_factories.voiced_uvular_nasal.spawn(dungeon, x, y)
+                elif random.random() < 0.6667:
+                    entity_factories.voiced_uvular_trill.spawn(dungeon, x, y)
+                elif random.random() < 0.8333:
+                    entity_factories.voiceless_uvular_fricative.spawn(dungeon, x, y)
+                else:
+                    entity_factories.voiced_uvular_fricative.spawn(dungeon, x, y)
+
+        elif dungeon.level == 3:
+            if not any(entity.x == x and entity.y == y for entity in dungeon.entities):
+                if random.random() < 0.1428:
+                    entity_factories.voiceless_velar_stop.spawn(dungeon, x, y)
+                elif random.random() < 0.2857:
+                    entity_factories.voiced_velar_stop.spawn(dungeon, x, y)
+                elif random.random() < 0.4286:
+                    entity_factories.voiced_velar_nasal.spawn(dungeon, x, y)
+                elif random.random() < 0.5714:
+                    entity_factories.voiceless_velar_fricative.spawn(dungeon, x, y)
+                elif random.random() < 0.7142:
+                    entity_factories.voiced_velar_fricative.spawn(dungeon, x, y)
+                elif random.random() < 0.8571:
+                    entity_factories.voiced_velar_approximant.spawn(dungeon, x, y)
+                else:
+                    entity_factories.voiced_velar_lateral_approximant.spawn(dungeon, x, y)
+
 
     for i in range(number_of_items):
         x = random.randint(room.x1 + 1, room.x2 - 1)
@@ -149,6 +183,7 @@ def traverse_node(node, map, rooms):
 
 
 def generate_dungeon(
+    level,
     map_width: int,
     map_height: int,
     max_monsters_per_room: int,
@@ -158,8 +193,10 @@ def generate_dungeon(
 
     rooms: List[RectangularRoom] = []
 
+    center_of_last_room = (0, 0)
+
     player = engine.player
-    dungeon = GameMap(engine, map_width, map_height, entities=[player])
+    dungeon = GameMap(level, engine, map_width, map_height, entities=[player])
 
     # New root node
     bsp = tcod.bsp.BSP(0, 0, map_width - 3, map_height - 3)
@@ -174,7 +211,19 @@ def generate_dungeon(
 
     player_room = random.choice(rooms)
     player.place(*player_room.center, dungeon)
+    last_room = random.choice(rooms)
+    max_distance = abs(last_room.center[0] - player.x) + abs(last_room.center[1] - player.y)
+
     for room in rooms:
         if room != player_room:
             place_entities(room, dungeon, max_monsters_per_room, max_items_per_room)
+            distance = abs(room.center[0] - player.x) + abs(room.center[1] - player.y)
+            if distance > max_distance:
+                last_room = room
+                max_distance = distance
+
+    center_of_last_room = last_room.center
+    dungeon.tiles[center_of_last_room] = tile_types.down_stairs
+    dungeon.downstairs_location = center_of_last_room
+
     return dungeon

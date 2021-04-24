@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\entity_factories.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\game_map.py">
           <value>
             <Attribute>

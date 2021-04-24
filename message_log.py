@@ -68,7 +68,7 @@ class MessageLog:
         The `messages` are rendered starting at the last message and working
         backwards.
         """
-        y_offset = height - 1
+        y_offset = height - 2
 
         for message in reversed(messages):
             for line in reversed(list(cls.wrap(message.full_text, width))):

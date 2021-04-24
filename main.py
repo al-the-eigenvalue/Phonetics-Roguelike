@@ -20,8 +20,29 @@ def main() -> None:
     screen_height = 50
 
     tileset = tcod.tileset.load_tilesheet(
-        "tilestemporary.png", 32, 15, tcod.tileset.CHARMAP_TCOD
+        "tiles.png", 32, 15, tcod.tileset.CHARMAP_TCOD
     )
+
+    tileset.remap(0x2591, 0, 5)
+    tileset.remap(0x2592, 1, 5)
+    tileset.remap(0x2593, 2, 5)
+    tileset.remap(0xC7, 3, 5)
+    tileset.remap(0xFC, 4, 5)
+
+    tileset.remap(0xE9, 0, 6)
+    tileset.remap(0xE2, 1, 6)
+    tileset.remap(0xE4, 2, 6)
+    tileset.remap(0xE0, 3, 6)
+    tileset.remap(0xE5, 4, 6)
+    tileset.remap(0xE7, 5, 6)
+    tileset.remap(0xEA, 6, 6)
+
+    tileset.remap(0xEB, 0, 7)
+    tileset.remap(0xE8, 1, 7)
+    tileset.remap(0xEF, 2, 7)
+    tileset.remap(0xEE, 3, 7)
+    tileset.remap(0xEC, 4, 7)
+    tileset.remap(0xC4, 5, 7)
 
     handler: input_handlers.BaseEventHandler = setup_game.MainMenu()
 
