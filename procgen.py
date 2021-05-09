@@ -47,7 +47,7 @@ def place_entities(
         y = random.randint(room.y1 + 1, room.y2 - 1)
         rand = random.random()
 
-        if dungeon.level == 8:
+        if dungeon.level == 1:
             if not any(entity.x == x and entity.y == y for entity in dungeon.entities):
                 if rand < 0.2:
                     entity_factories.glottal_stop.spawn(dungeon, x, y)
@@ -166,7 +166,7 @@ def place_entities(
                 else:
                     entity_factories.voiced_labiodental_approximant.spawn(dungeon, x, y)
 
-        elif dungeon.level == 1:
+        elif dungeon.level == 8:
             if not any(entity.x == x and entity.y == y for entity in dungeon.entities):
                 if rand < 0.1667:
                     entity_factories.voiceless_bilabial_stop.spawn(dungeon, x, y)
