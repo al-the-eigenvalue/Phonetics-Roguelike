@@ -20,7 +20,7 @@ def main() -> None:
     screen_height = 50
 
     tileset = tcod.tileset.load_tilesheet(
-        "tiles.png", 32, 15, tcod.tileset.CHARMAP_TCOD
+        "tiles.png", 32, 19, tcod.tileset.CHARMAP_TCOD
     )
 
     tileset.remap(0x2591, 0, 5)
