@@ -474,6 +474,46 @@ voiced_postalveolar_fricative = Actor(
     level=Level(xp_given=35),
 )
 
+voiceless_alveolar_lateral_fricative = Actor(
+    char="µ",
+    color=(157, 48, 87),
+    name="Voiceless Alveolar Lateral Fricative",
+    ai_cls=HostileEnemy,
+    fighter=Fighter(hp=10, defense=0, power=3),
+    inventory=Inventory(capacity=0),
+    level=Level(xp_given=35),
+)
+
+voiced_alveolar_lateral_fricative = Actor(
+    char="τ",
+    color=(157, 48, 87),
+    name="Voiced Alveolar Lateral Fricative",
+    ai_cls=HostileEnemy,
+    fighter=Fighter(hp=10, defense=0, power=3),
+    inventory=Inventory(capacity=0),
+    level=Level(xp_given=35),
+)
+
+voiced_alveolar_approximant = Actor(
+    char="Φ",
+    color=(157, 48, 87),
+    name="Voiced Alveolar Approximant",
+    ai_cls=HostileEnemy,
+    fighter=Fighter(hp=10, defense=0, power=3),
+    inventory=Inventory(capacity=0),
+    level=Level(xp_given=35),
+)
+
+voiced_alveolar_lateral_approximant = Actor(
+    char="Θ",
+    color=(157, 48, 87),
+    name="Voiced Alveolar Lateral Approximant",
+    ai_cls=HostileEnemy,
+    fighter=Fighter(hp=10, defense=0, power=3),
+    inventory=Inventory(capacity=0),
+    level=Level(xp_given=35),
+)
+
 # future level 7 enemies:
 
 voiced_labiodental_nasal = Actor(

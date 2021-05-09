@@ -130,28 +130,36 @@ def place_entities(
 
         elif dungeon.level == 6:
             if not any(entity.x == x and entity.y == y for entity in dungeon.entities):
-                if rand < 0.0909:
+                if rand < 0.0667:
                     entity_factories.voiceless_alveolar_stop.spawn(dungeon, x, y)
-                elif rand < 0.1818:
+                elif rand < 0.1333:
                     entity_factories.voiced_alveolar_stop.spawn(dungeon, x, y)
-                elif rand < 0.2727:
+                elif rand < 0.2:
                     entity_factories.voiced_alveolar_nasal.spawn(dungeon, x, y)
-                elif rand < 0.3636:
+                elif rand < 0.2667:
                     entity_factories.voiced_alveolar_trill.spawn(dungeon, x, y)
-                elif rand < 0.4545:
+                elif rand < 0.3333:
                     entity_factories.voiced_alveolar_flap.spawn(dungeon, x, y)
-                elif rand < 0.5455:
+                elif rand < 0.4:
                     entity_factories.voiceless_dental_fricative.spawn(dungeon, x, y)
-                elif rand < 0.6364:
+                elif rand < 0.4667:
                     entity_factories.voiced_dental_fricative.spawn(dungeon, x, y)
-                elif rand < 0.7273:
+                elif rand < 0.5333:
                     entity_factories.voiceless_alveolar_fricative.spawn(dungeon, x, y)
-                elif rand < 0.8182:
+                elif rand < 0.6:
                     entity_factories.voiced_alveolar_fricative.spawn(dungeon, x, y)
-                elif rand < 0.9091:
+                elif rand < 0.6667:
                     entity_factories.voiceless_postalveolar_fricative.spawn(dungeon, x, y)
-                else:
+                elif rand < 0.7333:
                     entity_factories.voiced_postalveolar_fricative.spawn(dungeon, x, y)
+                elif rand < 0.8:
+                    entity_factories.voiceless_alveolar_lateral_fricative.spawn(dungeon, x, y)
+                elif rand < 0.8667:
+                    entity_factories.voiced_alveolar_lateral_fricative.spawn(dungeon, x, y)
+                elif rand < 0.9333:
+                    entity_factories.voiced_alveolar_approximant.spawn(dungeon, x, y)
+                else:
+                    entity_factories.voiced_alveolar_lateral_approximant.spawn(dungeon, x, y)
 
         if dungeon.level == 7:
             if not any(entity.x == x and entity.y == y for entity in dungeon.entities):

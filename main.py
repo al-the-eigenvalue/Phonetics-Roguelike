@@ -72,6 +72,10 @@ def main() -> None:
     tileset.remap(0xAA, 8, 10)
     tileset.remap(0xBA, 9, 10)
     tileset.remap(0xBF, 10, 10)
+    tileset.remap(0xB5, 11, 10)
+    tileset.remap(0x03C4, 12, 10)
+    tileset.remap(0x03A6, 13, 10)
+    tileset.remap(0x0398, 14, 10)
 
     tileset.remap(0x2310, 0, 11)
     tileset.remap(0xAC, 1, 11)
