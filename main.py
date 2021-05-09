@@ -44,6 +44,48 @@ def main() -> None:
     tileset.remap(0xEC, 4, 7)
     tileset.remap(0xC4, 5, 7)
 
+    tileset.remap(0xC5, 0, 8)
+    tileset.remap(0xC9, 1, 8)
+    tileset.remap(0xE6, 2, 8)
+    tileset.remap(0xC6, 3, 8)
+    tileset.remap(0xF4, 4, 8)
+    tileset.remap(0xF6, 5, 8)
+    tileset.remap(0xF2, 6, 8)
+
+    tileset.remap(0xFB, 0, 9)
+    tileset.remap(0xF9, 1, 9)
+    tileset.remap(0xFF, 2, 9)
+    tileset.remap(0xD6, 3, 9)
+    tileset.remap(0xDC, 4, 9)
+    tileset.remap(0xA2, 5, 9)
+    tileset.remap(0xA3, 6, 9)
+    tileset.remap(0xA5, 7, 9)
+
+    tileset.remap(0x20A7, 0, 10)
+    tileset.remap(0x0192, 1, 10)
+    tileset.remap(0xE1, 2, 10)
+    tileset.remap(0xED, 3, 10)
+    tileset.remap(0xF3, 4, 10)
+    tileset.remap(0xFA, 5, 10)
+    tileset.remap(0xF1, 6, 10)
+    tileset.remap(0xD1, 7, 10)
+    tileset.remap(0xAA, 8, 10)
+    tileset.remap(0xBA, 9, 10)
+    tileset.remap(0xBF, 10, 10)
+
+    tileset.remap(0x2310, 0, 11)
+    tileset.remap(0xAC, 1, 11)
+    tileset.remap(0xBD, 2, 11)
+    tileset.remap(0xBC, 3, 11)
+    tileset.remap(0xA1, 4, 11)
+
+    tileset.remap(0x03B1, 0, 12)
+    tileset.remap(0xDF, 1, 12)
+    tileset.remap(0x0393, 2, 12)
+    tileset.remap(0x03C0, 3, 12)
+    tileset.remap(0x03A3, 4, 12)
+    tileset.remap(0x03C3, 5, 12)
+
     handler: input_handlers.BaseEventHandler = setup_game.MainMenu()
 
     with tcod.context.new_terminal(
