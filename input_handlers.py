@@ -528,4 +528,6 @@ class ControlsScreenEventHandler(AskUserEventHandler):
         console.print(
             x=x + 1,
             y=y + 1,
-            string="[Y][K][U]\n[H]   [L] - movements (arrow keys also work!)\n[B][J][N]\n[Q] - open this menu\n[C] - show character info\n[G] - grab item\n[D] - drop item\n[I] - open inventory\n[V] - show message history\n[Shift] + [.] (i.e. [>]) - move to next level")
+            string="[Y][K][U]\n[H]   [L] - movements (arrow keys also work!)\n[B][J][N]\n[Q] - open this menu\n[C] - "
+                   "show character info\n[G] - grab item\n[D] - drop item\n[I] - open inventory\n[V] - show message "
+                   "history\n[Shift] + [.] (i.e. [>]) - move to next level")
