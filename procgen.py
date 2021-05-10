@@ -194,7 +194,27 @@ def place_entities(
         y = random.randint(room.y1 + 1, room.y2 - 1)
 
         if not any(entity.x == x and entity.y == y for entity in dungeon.entities):
-            entity_factories.health_potion.spawn(dungeon, x, y)
+            rand_potion = random.random()
+            if dungeon.level == 1 or dungeon.level == 2:
+                if rand_potion < 0.5:
+                    entity_factories.open_front_unrounded_vowel.spawn(dungeon, x, y)
+                else:
+                    entity_factories.open_back_unrounded_vowel.spawn(dungeon, x, y)
+            elif dungeon.level == 3 or dungeon.level == 4:
+                if rand_potion < 0.5:
+                    entity_factories.open_mid_front_unrounded_vowel.spawn(dungeon, x, y)
+                else:
+                    entity_factories.open_mid_back_unrounded_vowel.spawn(dungeon, x, y)
+            elif dungeon.level == 5 or dungeon.level == 6:
+                if rand_potion < 0.5:
+                    entity_factories.close_mid_front_unrounded_vowel.spawn(dungeon, x, y)
+                else:
+                    entity_factories.close_mid_back_unrounded_vowel.spawn(dungeon, x, y)
+            else:
+                if rand_potion < 0.5:
+                    entity_factories.close_front_unrounded_vowel.spawn(dungeon, x, y)
+                else:
+                    entity_factories.close_back_unrounded_vowel.spawn(dungeon, x, y)
 
 
 def tunnel_between(

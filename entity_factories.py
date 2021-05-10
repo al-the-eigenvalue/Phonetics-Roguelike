@@ -15,11 +15,68 @@ player = Actor(
     level=Level(level_up_base=200),
 )
 
-health_potion = Item(
-    char="!",
+# small healing potions
+
+open_front_unrounded_vowel = Item(
+    char="Ω",
     color=(158, 48, 87),
-    name="Health Potion",
+    name="Open Front Unrounded Vowel",
     consumable=HealingConsumable(amount=4),
+)
+
+open_back_unrounded_vowel = Item(
+    char="δ",
+    color=(158, 48, 87),
+    name="Open Back Unrounded Vowel",
+    consumable=HealingConsumable(amount=5),
+)
+
+# medium healing potions
+
+open_mid_front_unrounded_vowel = Item(
+    char="∞",
+    color=(158, 48, 87),
+    name="Open-Mid Front Unrounded Vowel",
+    consumable=HealingConsumable(amount=6),
+)
+
+open_mid_back_unrounded_vowel = Item(
+    char="φ",
+    color=(158, 48, 87),
+    name="Open-Mid Back Unrounded Vowel",
+    consumable=HealingConsumable(amount=7),
+)
+
+# large healing potions
+
+close_mid_front_unrounded_vowel = Item(
+    char="ε",
+    color=(158, 48, 87),
+    name="Close-Mid Front Unrounded Vowel",
+    consumable=HealingConsumable(amount=8),
+)
+
+close_mid_back_unrounded_vowel = Item(
+    char="∩",
+    color=(158, 48, 87),
+    name="Close-Mid Back Unrounded Vowel",
+    consumable=HealingConsumable(amount=9),
+)
+
+# ultimate healing potions
+
+close_front_unrounded_vowel = Item(
+    char="≡",
+    color=(158, 48, 87),
+    name="Close Front Unrounded Vowel",
+    consumable=HealingConsumable(amount=10),
+)
+
+close_back_unrounded_vowel = Item(
+    char="±",
+    color=(158, 48, 87),
+    name="Close Back Unrounded Vowel",
+    consumable=HealingConsumable(amount=11),
 )
 
 # future level 1 enemies:

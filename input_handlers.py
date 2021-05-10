@@ -390,18 +390,16 @@ class InventoryEventHandler(AskUserEventHandler):
             height = 3
 
         if self.engine.player.x <= 30:
-            x = 40
+            x = 35
         else:
             x = 0
 
         y = 0
 
-        width = len(self.TITLE) + 4
-
         console.draw_frame(
             x=x,
             y=y,
-            width=width,
+            width=38,
             height=height,
             title=self.TITLE,
             clear=True,

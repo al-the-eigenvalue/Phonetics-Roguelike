@@ -90,6 +90,18 @@ def main() -> None:
     tileset.remap(0x03A3, 4, 12)
     tileset.remap(0x03C3, 5, 12)
 
+    tileset.remap(0x03A9, 0, 16)
+    tileset.remap(0x03B4, 2, 16)
+
+    tileset.remap(0x221E, 0, 15)
+    tileset.remap(0x03C6, 2, 15)
+
+    tileset.remap(0x03B5, 0, 14)
+    tileset.remap(0x2229, 2, 14)
+
+    tileset.remap(0x2261, 0, 13)
+    tileset.remap(0xB1, 2, 13)
+
     handler: input_handlers.BaseEventHandler = setup_game.MainMenu()
 
     with tcod.context.new_terminal(

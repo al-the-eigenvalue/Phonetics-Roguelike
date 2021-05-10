@@ -53,6 +53,7 @@ class PickupAction(Action):
                 item.parent = self.entity.inventory
                 inventory.items.append(item)
 
+                playsound("sounds/" + str(item.name) + ".mp3", False)
                 self.engine.message_log.add_message(f"You picked up the {item.name}!", color.item_picked_up)
                 return
 
@@ -100,7 +101,7 @@ class TakeStairsAction(Action):
                 "You climb up the oral cavity.", color.climb
             )
         else:
-            raise exceptions.Impossible("There are no stairs here.")
+            raise exceptions.Impossible("You cannot climb up here.")
 
 
 class ActionWithDirection(Action):
