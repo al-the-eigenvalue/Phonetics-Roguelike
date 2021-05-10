@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Optional, Tuple, TYPE_CHECKING
 
+from playsound import playsound
 import color
 import exceptions
 
@@ -96,7 +97,7 @@ class TakeStairsAction(Action):
         if (self.entity.x, self.entity.y) == self.engine.game_map.downstairs_location:
             self.engine.game_world.generate_floor()
             self.engine.message_log.add_message(
-                "You descend the staircase.", color.descend
+                "You climb up the oral cavity.", color.climb
             )
         else:
             raise exceptions.Impossible("There are no stairs here.")
@@ -133,6 +134,11 @@ class MeleeAction(ActionWithDirection):
         target = self.target_actor
         if not target:
             raise exceptions.Impossible("Nothing to attack.")
+        else:
+            if not target.encountered:
+                playsound("sounds/" + str(target.name) + ".mp3", False)
+
+            target.encountered = True
 
         damage = self.entity.fighter.power - target.fighter.defense
 

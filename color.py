@@ -19,7 +19,7 @@ error = pink
 welcome_text = pink
 health_recovered = orange
 item_picked_up = orange
-descend = rose
+climb = rose
 
 bar_text = white
 bar_filled = rose
