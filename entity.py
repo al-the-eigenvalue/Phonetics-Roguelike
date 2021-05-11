@@ -33,7 +33,6 @@ class Entity:
         name: str = "<Unnamed>",
         blocks_movement: bool = False,
         render_order: RenderOrder = RenderOrder.CORPSE,
-        encountered: bool = False
     ):
         self.x = x
         self.y = y
@@ -42,7 +41,6 @@ class Entity:
         self.name = name
         self.blocks_movement = blocks_movement
         self.render_order = render_order
-        self.encountered = encountered
         if parent:
             # If parent isn't provided now then it will be set later.
             self.parent = parent

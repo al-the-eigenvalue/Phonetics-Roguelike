@@ -84,10 +84,9 @@ class BaseEventHandler(tcod.event.EventDispatch[ActionOrHandler]):
 class PopupMessage(BaseEventHandler):
     """Display a popup text window."""
 
-    def __init__(self, parent_handler: BaseEventHandler, text: str, numberOfMessages: int=0):
+    def __init__(self, parent_handler: BaseEventHandler, text: str):
         self.parent = parent_handler
         self.text = text
-        self.numberOfMessages = numberOfMessages
 
     def on_render(self, console: tcod.Console) -> None:
         """Render the parent and dim the result, then print the message on top."""
@@ -97,11 +96,11 @@ class PopupMessage(BaseEventHandler):
 
         console.print(
             console.width // 2,
-            console.height // 2 - self.numberOfMessages // 2,
+            console.height // 2,
             self.text,
-            fg=color.menu_text,
+            fg=color.white,
+            bg=color.black,
             alignment=tcod.CENTER,
-            bg_blend=tcod.BKGND_ALPHA(64),
         )
 
     def ev_keydown(self, event: tcod.event.KeyDown) -> Optional[BaseEventHandler]:
@@ -183,8 +182,6 @@ class MainGameEventHandler(EventHandler):
             return InventoryDropHandler(self.engine)
         elif key == tcod.event.K_c:
             return CharacterScreenEventHandler(self.engine)
-        elif key == tcod.event.K_q:
-            return ControlsScreenEventHandler(self.engine)
 
         # No valid key was pressed
         return action
@@ -390,16 +387,18 @@ class InventoryEventHandler(AskUserEventHandler):
             height = 3
 
         if self.engine.player.x <= 30:
-            x = 35
+            x = 40
         else:
             x = 0
 
         y = 0
 
+        width = len(self.TITLE) + 4
+
         console.draw_frame(
             x=x,
             y=y,
-            width=38,
+            width=width,
             height=height,
             title=self.TITLE,
             clear=True,
@@ -497,35 +496,3 @@ class CharacterScreenEventHandler(AskUserEventHandler):
         console.print(
             x=x + 1, y=y + 5, string=f"Defense: {self.engine.player.fighter.defense}"
         )
-
-
-class ControlsScreenEventHandler(AskUserEventHandler):
-    TITLE = "Controls"
-
-    def on_render(self, console: tcod.Console) -> None:
-        super().on_render(console)
-
-        if self.engine.player.x <= 30:
-            x = 28
-        else:
-            x = 0
-
-        y = 0
-
-        console.draw_frame(
-            x=x,
-            y=y,
-            width=50,
-            height=12,
-            title=self.TITLE,
-            clear=True,
-            fg=(255, 255, 255),
-            bg=(0, 0, 0),
-        )
-
-        console.print(
-            x=x + 1,
-            y=y + 1,
-            string="[Y][K][U]\n[H]   [L] - movements (arrow keys also work!)\n[B][J][N]\n[Q] - open this menu\n[C] - "
-                   "show character info\n[G] - grab item\n[D] - drop item\n[I] - open inventory\n[V] - show message "
-                   "history\n[Shift] + [.] (i.e. [>]) - move to next level")
