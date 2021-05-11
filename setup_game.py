@@ -89,7 +89,7 @@ class MainMenu(input_handlers.BaseEventHandler):
 
         menu_width = 24
         for i, text in enumerate(
-            ["(N) Play a new game", "(C) Continue last game", "(Q) Quit"]
+            ["(N) Play a new game", "(C) Continue last game", "(H) Help", "(Q) Quit"]
         ):
             console.print(
                 console.width // 2,
@@ -115,6 +115,16 @@ class MainMenu(input_handlers.BaseEventHandler):
                 traceback.print_exc()  # Print to stderr.
                 return input_handlers.PopupMessage(self, f"Failed to load save:\n{exc}")
             pass
+        elif event.sym == tcod.event.K_h:
+            return input_handlers.PopupMessage(self, "Welcome to Phonetics Roguelike!\n\nIn this game, you need to "
+                                                     "find your way out of a human`s oral cavity.\nConsonants will "
+                                                     "try to hinder you, and vowels will help you.\n\nControls:\n[Y]["
+                                                     "K][U]                                   \n[H]   [L] - movements "
+                                                     "(arrow keys also work!)\n[B][J][N]                              "
+                                                     "     \n[Q] - open this menu\n[C] - show character info\n[G] - "
+                                                     "grab item\n[D] - drop item\n[I] - open inventory\n[V] - show "
+                                                     "message history\n[Shift] + [.] (i.e. [>]) - move to next "
+                                                     "level\n\nGood luck!\n\n", 18)
         elif event.sym == tcod.event.K_n:
             return input_handlers.MainGameEventHandler(new_game())
 
