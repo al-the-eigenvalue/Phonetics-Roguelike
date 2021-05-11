@@ -10,7 +10,7 @@ player = Actor(
     color=(255, 255, 255),
     name="Player",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=30, defense=2, power=5),
+    fighter=Fighter(hp=30, defense=1, power=7),
     inventory=Inventory(capacity=26),
     level=Level(level_up_base=200),
 )
@@ -86,7 +86,7 @@ glottal_stop = Actor(
     color=(157, 48, 87),
     name="Glottal Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=0, power=2),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -96,7 +96,7 @@ voiceless_glottal_fricative = Actor(
     color=(157, 48, 87),
     name="Voiceless Glottal Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=0, power=2),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -106,7 +106,7 @@ voiced_glottal_fricative = Actor(
     color=(157, 48, 87),
     name="Voiced Glottal Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=0, power=2),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -116,7 +116,7 @@ voiceless_pharyngeal_fricative = Actor(
     color=(157, 48, 87),
     name="Voiceless Pharyngeal Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=0, power=2),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -126,7 +126,7 @@ voiced_pharyngeal_fricative = Actor(
     color=(157, 48, 87),
     name="Voiced Pharyngeal Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=0, power=2),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -138,7 +138,7 @@ voiceless_uvular_stop = Actor(
     color=(157, 48, 87),
     name="Voiceless Uvular Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -148,7 +148,7 @@ voiced_uvular_stop = Actor(
     color=(157, 48, 87),
     name="Voiced Uvular Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -158,7 +158,7 @@ voiced_uvular_nasal = Actor(
     color=(157, 48, 87),
     name="Voiced Uvular Nasal",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -168,7 +168,7 @@ voiced_uvular_trill = Actor(
     color=(157, 48, 87),
     name="Voiced Uvular Trill",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -178,7 +178,7 @@ voiceless_uvular_fricative = Actor(
     color=(157, 48, 87),
     name="Voiceless Uvular Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -188,7 +188,7 @@ voiced_uvular_fricative = Actor(
     color=(157, 48, 87),
     name="Voiced Uvular Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -200,7 +200,7 @@ voiceless_velar_stop = Actor(
     color=(157, 48, 87),
     name="Voiceless Velar Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -210,7 +210,7 @@ voiced_velar_stop = Actor(
     color=(157, 48, 87),
     name="Voiced Velar Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -220,7 +220,7 @@ voiced_velar_nasal = Actor(
     color=(157, 48, 87),
     name="Voiced Velar Nasal",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -230,7 +230,7 @@ voiceless_velar_fricative = Actor(
     color=(157, 48, 87),
     name="Voiceless Velar Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -240,7 +240,7 @@ voiced_velar_fricative = Actor(
     color=(157, 48, 87),
     name="Voiced Velar Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -250,7 +250,7 @@ voiced_velar_approximant = Actor(
     color=(157, 48, 87),
     name="Voiced Velar Approximant",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -260,7 +260,7 @@ voiced_velar_lateral_approximant = Actor(
     color=(157, 48, 87),
     name="Voiced Velar Lateral Approximant",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=10, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -272,7 +272,7 @@ voiceless_palatal_stop = Actor(
     color=(157, 48, 87),
     name="Voiceless Palatal Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -282,7 +282,7 @@ voiced_palatal_stop = Actor(
     color=(157, 48, 87),
     name="Voiced Palatal Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -292,7 +292,7 @@ voiced_palatal_nasal = Actor(
     color=(157, 48, 87),
     name="Voiced Palatal Nasal",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -302,7 +302,7 @@ voiceless_palatal_fricative = Actor(
     color=(157, 48, 87),
     name="Voiceless Palatal Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -312,7 +312,7 @@ voiced_palatal_fricative = Actor(
     color=(157, 48, 87),
     name="Voiced Palatal Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -322,7 +322,7 @@ voiced_palatal_approximant = Actor(
     color=(157, 48, 87),
     name="Voiced Palatal Approximant",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -332,7 +332,7 @@ voiced_palatal_lateral_approximant = Actor(
     color=(157, 48, 87),
     name="Voiced Palatal Lateral Approximant",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=1, power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -344,7 +344,7 @@ voiceless_retroflex_stop = Actor(
     color=(157, 48, 87),
     name="Voiceless Retroflex Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -354,7 +354,7 @@ voiced_retroflex_stop = Actor(
     color=(157, 48, 87),
     name="Voiced Retroflex Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -364,7 +364,7 @@ voiced_retroflex_nasal = Actor(
     color=(157, 48, 87),
     name="Voiced Retroflex Nasal",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -374,7 +374,7 @@ voiced_retroflex_flap = Actor(
     color=(157, 48, 87),
     name="Voiced Retroflex Flap",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -384,7 +384,7 @@ voiceless_retroflex_fricative = Actor(
     color=(157, 48, 87),
     name="Voiceless Retroflex Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -394,7 +394,7 @@ voiced_retroflex_fricative = Actor(
     color=(157, 48, 87),
     name="Voiced Retroflex Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -404,7 +404,7 @@ voiced_retroflex_approximant = Actor(
     color=(157, 48, 87),
     name="Voiced Retroflex Approximant",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -414,7 +414,7 @@ voiced_retroflex_lateral_approximant = Actor(
     color=(157, 48, 87),
     name="Voiced Retroflex Lateral Approximant",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=15, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -426,7 +426,7 @@ voiceless_alveolar_stop = Actor(
     color=(157, 48, 87),
     name="Voiceless Alveolar Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -436,7 +436,7 @@ voiced_alveolar_stop = Actor(
     color=(157, 48, 87),
     name="Voiced Alveolar Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -446,7 +446,7 @@ voiced_alveolar_nasal = Actor(
     color=(157, 48, 87),
     name="Voiced Alveolar Nasal",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -456,7 +456,7 @@ voiced_alveolar_trill = Actor(
     color=(157, 48, 87),
     name="Voiced Alveolar Trill",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -466,7 +466,7 @@ voiced_alveolar_flap = Actor(
     color=(157, 48, 87),
     name="Voiced Alveolar Flap",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -476,7 +476,7 @@ voiceless_dental_fricative = Actor(
     color=(157, 48, 87),
     name="Voiceless Dental Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -486,7 +486,7 @@ voiced_dental_fricative = Actor(
     color=(157, 48, 87),
     name="Voiced Dental Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -496,7 +496,7 @@ voiceless_alveolar_fricative = Actor(
     color=(157, 48, 87),
     name="Voiceless Alveolar Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -506,7 +506,7 @@ voiced_alveolar_fricative = Actor(
     color=(157, 48, 87),
     name="Voiced Alveolar Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=3, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -516,7 +516,7 @@ voiceless_postalveolar_fricative = Actor(
     color=(157, 48, 87),
     name="Voiceless Postalveolar Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -526,7 +526,7 @@ voiced_postalveolar_fricative = Actor(
     color=(157, 48, 87),
     name="Voiced Postalveolar Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -536,7 +536,7 @@ voiceless_alveolar_lateral_fricative = Actor(
     color=(157, 48, 87),
     name="Voiceless Alveolar Lateral Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -546,7 +546,7 @@ voiced_alveolar_lateral_fricative = Actor(
     color=(157, 48, 87),
     name="Voiced Alveolar Lateral Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -556,7 +556,7 @@ voiced_alveolar_approximant = Actor(
     color=(157, 48, 87),
     name="Voiced Alveolar Approximant",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -566,7 +566,7 @@ voiced_alveolar_lateral_approximant = Actor(
     color=(157, 48, 87),
     name="Voiced Alveolar Lateral Approximant",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=2, power=5),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -578,7 +578,7 @@ voiced_labiodental_nasal = Actor(
     color=(157, 48, 87),
     name="Voiced Labiodental Nasal",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=3, power=6),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -588,7 +588,7 @@ voiced_labiodental_flap = Actor(
     color=(157, 48, 87),
     name="Voiced Labiodental Flap",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=3, power=6),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -598,7 +598,7 @@ voiceless_labiodental_fricative = Actor(
     color=(157, 48, 87),
     name="Voiceless Labiodental Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=3, power=6),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -608,7 +608,7 @@ voiced_labiodental_fricative = Actor(
     color=(157, 48, 87),
     name="Voiced Labiodental Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=3, power=6),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -618,7 +618,7 @@ voiced_labiodental_approximant = Actor(
     color=(157, 48, 87),
     name="Voiced Labiodental Approximant",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=3, power=6),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -630,7 +630,7 @@ voiceless_bilabial_stop = Actor(
     color=(157, 48, 87),
     name="Voiceless Bilabial Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=3, power=6),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -640,7 +640,7 @@ voiced_bilabial_stop = Actor(
     color=(157, 48, 87),
     name="Voiced Bilabial Stop",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=3, power=6),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -650,7 +650,7 @@ voiced_bilabial_nasal = Actor(
     color=(157, 48, 87),
     name="Voiced Bilabial Nasal",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=3, power=6),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -660,7 +660,7 @@ voiced_bilabial_trill = Actor(
     color=(157, 48, 87),
     name="Voiced Bilabial Trill",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=3, power=6),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -670,7 +670,7 @@ voiceless_bilabial_fricative = Actor(
     color=(157, 48, 87),
     name="Voiceless Bilabial Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=3, power=6),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -680,7 +680,7 @@ voiced_bilabial_fricative = Actor(
     color=(157, 48, 87),
     name="Voiced Bilabial Fricative",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=10, defense=0, power=3),
+    fighter=Fighter(hp=20, defense=3, power=6),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
