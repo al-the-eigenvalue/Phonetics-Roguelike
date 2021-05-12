@@ -91,6 +91,7 @@ class WaitAction(Action):
 
 
 class TakeStairsAction(Action):
+
     def perform(self) -> None:
         """
         Take the stairs, if any exist at the entity's location.

@@ -7,6 +7,7 @@ from typing import Callable, Optional, Tuple, TYPE_CHECKING, Union
 import tcod.event
 
 import actions
+import new_game
 from actions import (
     Action,
     BumpAction,
@@ -164,7 +165,10 @@ class MainGameEventHandler(EventHandler):
         if key == tcod.event.K_PERIOD and modifier & (
                 tcod.event.KMOD_LSHIFT | tcod.event.KMOD_RSHIFT
         ):
-            return actions.TakeStairsAction(player)
+            if self.engine.game_world.current_floor == 8:
+                return WinEventHandler(self.engine)
+            else:
+                return actions.TakeStairsAction(player)
 
         if key in MOVE_KEYS:
             dx, dy = MOVE_KEYS[key]
@@ -191,6 +195,19 @@ class MainGameEventHandler(EventHandler):
 
 
 class GameOverEventHandler(EventHandler):
+    def on_render(self, console: tcod.Console) -> None:
+        console.tiles_rgb["fg"] //= 8
+        console.tiles_rgb["bg"] //= 8
+
+        console.print(
+            console.width // 2,
+            console.height // 2 - 2,
+            "You died!\n\n(N) Play a new game\n(Q) Quit",
+            fg=color.menu_text,
+            alignment=tcod.CENTER,
+            bg_blend=tcod.BKGND_ALPHA(64),
+        )
+
     def on_quit(self) -> None:
         """Handle exiting out of a finished game."""
         if os.path.exists("savegame.sav"):
@@ -204,9 +221,26 @@ class GameOverEventHandler(EventHandler):
         if self.engine.game_map.in_bounds(event.tile.x, event.tile.y):
             self.engine.mouse_location = event.tile.x, event.tile.y
 
-    def ev_keydown(self, event: tcod.event.KeyDown) -> None:
-        if event.sym == tcod.event.K_ESCAPE:
+    def ev_keydown(self, event: tcod.event.KeyDown) -> Optional[BaseEventHandler]:
+        if event.sym == tcod.event.K_n:
+            return MainGameEventHandler(new_game.start())
+        if event.sym == tcod.event.K_ESCAPE or event.sym == tcod.event.K_q:
             self.on_quit()
+
+
+class WinEventHandler(GameOverEventHandler):
+    def on_render(self, console: tcod.Console) -> None:
+        console.tiles_rgb["fg"] //= 8
+        console.tiles_rgb["bg"] //= 8
+
+        console.print(
+            console.width // 2,
+            console.height // 2 - 2,
+            "Congratulations, you have beaten the game!\n\n(N) Play a new game\n(Q) Quit",
+            fg=color.menu_text,
+            alignment=tcod.CENTER,
+            bg_blend=tcod.BKGND_ALPHA(64),
+        )
 
 
 CURSOR_Y_KEYS = {

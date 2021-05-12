@@ -161,7 +161,7 @@ def place_entities(
                 else:
                     entity_factories.voiced_alveolar_lateral_approximant.spawn(dungeon, x, y)
 
-        if dungeon.level == 7:
+        elif dungeon.level == 7:
             if not any(entity.x == x and entity.y == y for entity in dungeon.entities):
                 if rand < 0.2:
                     entity_factories.voiced_labiodental_nasal.spawn(dungeon, x, y)
