@@ -2,7 +2,7 @@
 
 ### Overview:
 
-This is a phonetics-themed roguelike game for a programming project. It is built with ___Python___ using object-oriented programming. The development followed this tutorial *(http://rogueliketutorials.com/tutorials/tcod/v2/)* and used mainly the ___tcod___ library, as well as some others. The project might be of help with getting to know IPA (International Phonetic Alphabet).
+This is a phonetics-themed roguelike game for a programming project. It is built with ___Python___ using object-oriented programming. The development followed this tutorial *(http://rogueliketutorials.com/tutorials/tcod/v2/)* and used mainly the ___tcod___ library, as well as some others. The project might be of help with getting to know ___IPA___ (International Phonetic Alphabet).
 
 ### Features:
 
