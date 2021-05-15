@@ -17,7 +17,7 @@ This is a phonetics-themed roguelike game for a programming project. It is built
 ### Levels:
 
 | level | hp | defence | power | comment |
-|----:|:----:|:-----:|:----:|:----------|
+|--:|:----:|:-----:|:----:|:----------|
 | 1 | 0 | 3 | 0 | this should be a level where the player basically gets introduced to the game |
 | 2 | 1 | 4 | 1 | |
 | 3 | 1 | 4 | 1 | |
