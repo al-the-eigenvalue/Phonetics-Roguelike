@@ -18,11 +18,11 @@ This is a phonetics-themed roguelike game for a programming project. It is built
 
 | level | hp | defence | power | comment |
 |--:|:----:|:-----:|:----:|:----------|
-| 1 | 0 | 3 | 0 | this should be a level where the player basically gets introduced to the game |
-| 2 | 1 | 4 | 1 | |
-| 3 | 1 | 4 | 1 | |
-| 4 | 1 | 4 | 1 | |
-| 5 | 2 | 5 | 2 | |
-| 6 | 2 | 5 | 2 | |
-| 7 | 3 | 6 | 3 | |
-| 8 | 3 | 6 | 3 | |
+| 1 | 0 | 3 | 0 | "pharyngeal-glottal" level (this should be a level where the player basically gets introduced to the game) |
+| 2 | 1 | 4 | 1 | "velar" level |
+| 3 | 1 | 4 | 1 | "uvular" level |
+| 4 | 1 | 4 | 1 | "palatal" level |
+| 5 | 2 | 5 | 2 | "retroflex" level |
+| 6 | 2 | 5 | 2 | "postalveolar" level |
+| 7 | 3 | 6 | 3 | "labiodental" level |
+| 8 | 3 | 6 | 3 | "bilabial" level |
